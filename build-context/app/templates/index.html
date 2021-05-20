@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>WAGO GPS</title>
+
+	<link rel="icon" href="static/media/favicon.png" type="image/gif" sizes="16x16">
+
+	<meta charset="utf-8">
+
+	<script src="static/js/jquery-3.5.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
+		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" 
+		crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
+		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" 
+		crossorigin=""></script>
+		
+
+	<link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body class="body">
+	<div class="grid-container"> 
+		<!--Map-->
+		<div class="map" id="mapid"></div>
+		<!--Right-->
+		<div class="right">
+			<!--Header-->
+			<div class="header">
+				<!--Logo-->
+				<img class="logo" src="static/media/wago-logo.svg">
+			</div>
+			<!--Logging-->
+			<div class="logging">
+				<table class="output">
+					<tr>
+					  <th class="output-th">Log-Status:</th>
+					  <td class="output-td" id="logStatus"></td>
+					</tr>
+				</table>
+				<!--Start/Stop-->
+				<button class="button-green" id="startLogging" type="button">Start Logging</button>
+				<button class="button-red" id="stopLogging" type="button">Stop Logging</button>
+			</div>
+			<!--Filter-->
+			<div class="filter">
+				<label>
+					Start Day/Time:
+					<br>
+					<input class="input" id="startDate" type="date">
+					<input class="input" id="startTime" type="time">
+				</label>
+				<br><br>
+				<label>
+					Stop Day/Time:
+					<br>
+					<input class="input" id="stopDate" type="date">
+					<input class="input" id="stopTime" type="time">
+				</label>
+				<br><br>
+				<label>
+					All:
+					<input type="radio" id="technologyAll" name="technology" value="ALL" checked>
+				</label>
+				<label>
+					LTE:
+					<input type="radio" id="technologyLte" name="technology" value="LTE">
+				</label>
+				<br><br>
+				<button class="button-green" id="setFilters" type="button">Apply Filter</button>
+				<button class="button-red" id="removeData" type="button">Remove Data</button>
+			</div>
+			<!--Status-->
+			<div class="status">
+				<table class="output">
+					<tr>
+						<th class="output-th">Oldest Log:</th>
+						<td class="output-td" id="oldestLog"></td>
+					</tr>
+					<tr>
+						<th class="output-th">Newest Log:</th>
+						<td class="output-td" id="newestLog"></td>
+					</tr>
+					<tr>
+						<th class="output-th">Storage:</th>
+						<td class="output-td" id="storage"></td>
+					</tr>
+					<tr>
+						<th class="output-th">Version:</th>
+						<td class="output-td" id="version">1.0</td>
+					</tr>
+				</table>
+			</div>
+			<!--Toggle elements-->
+			<div class="map-control">
+				<button class="button-green-small" id="toggleCircles" type="button">Circles</button>
+				<button class="button-green-small" id="toggleMarkers" type="button">Spots</button>
+				<button class="button-green-small" id="toggleRoute" type="button">Route</button>
+			</div>
+		</div>
+	</div>
+
+
+	
+	
+
+<!--Scripts-->
+<script src="static/js/script.js"></script>
+<script src="static/js/ajaxRequest.js"></script>
+
+</body></html>
