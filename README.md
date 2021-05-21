@@ -1,5 +1,5 @@
 # gps-logger
-This repository contains the sources for a GPS logger application running on a WAGO PFC 750-8217 with Mobile Radio Module 4G.  
+This repository contains the sources for a GPS logger application running on a WAGO PFC 750-8217 with Mobile Radio Module 4G. For further information check the Wiki (https://github.com/WAGO/gps-logger/wiki)
 
 
 ## Starting the gps-logger container 
