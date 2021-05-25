@@ -47,6 +47,11 @@ class webserver(threading.Thread):
                 response = os.popen("bash /app/script/startCellLog.sh").read()
                 #success
                 if(response == "done\n"):
+                    #write to file
+                    f = open("/app/volume/logStatus.txt","w")
+                    f.write("True")
+                    f.close()
+
                     logCell = True
                     return "Log started"
                 #error
@@ -65,6 +70,11 @@ class webserver(threading.Thread):
                 response = os.popen("bash /app/script/killCellLog.sh").read()
                 #success
                 if(response == "done\n"):
+                    #write to file
+                    f = open("/app/volume/logStatus.txt","w")
+                    f.write("False")
+                    f.close()
+
                     logCell = False
                     return "Log stoped"
                 #error
@@ -384,6 +394,22 @@ def handler_stop_signals(signum, frame):
 #define funktion for 'stop container'
 signal.signal(signal.SIGINT, handler_stop_signals)
 signal.signal(signal.SIGTERM, handler_stop_signals)
+
+#set current log status
+data = open("/app/volume/logStatus.txt","r").readlines()[0]
+#logging
+if(data == "True"):
+    response = os.popen("bash /app/script/startCellLog.sh").read()
+    #success
+    if(response == "done\n"):
+        logCell = True
+    #error
+    else:
+        logCell = False
+#not logging
+elif(data == "False"):
+    logCell = False
+
 
 #run threads
 t1 = webserver()
