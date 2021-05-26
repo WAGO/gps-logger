@@ -15,8 +15,3 @@ docker run -d \
 -e BRIDGE_IP_HOST=bridge.network.ip \ (optional => default "172.17.0.1")
 wagoautomation/gps-logger:tag (e.g. latest or 01.01.00)
 ```
-## Get OpenCelliD access token
-- Create a free account on the website https://opencellid.org/. 
-- After logging in, the token can be generated under "API Access Tokens" via "Create Access Token". 
-
-> <span style="color:red;"> <strong>Attention:</strong> </span> If necessary the port "8081" can be changed according to internal IT security guidelines. This port is used to access the application web interface. 
