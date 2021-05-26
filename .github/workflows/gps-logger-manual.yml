@@ -6,7 +6,7 @@ on:
       version:
         description: "Application version"
         required: true
-        default: "v00.01.00"
+        default: "01.01.00"
 
 jobs:
   build_arm_image:
@@ -33,4 +33,5 @@ jobs:
             RELEASE_TAG=${{ github.event.inputs.version }}
           push: true
           tags: |
-            wagoautomation/gps-logger:testing
+            wagoautomation/gps-logger:${{ github.event.inputs.version }}
+            wagoautomation/gps-logger:latest
