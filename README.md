@@ -8,10 +8,10 @@ This repository contains the sources for a GPS logger application running on a W
 docker run -d \
 --restart=always \
 --name gps-logger \
--v your/log/folder:/app/volume \
+-v locationLog:/app/volume \
 -p 8081:5000 \ (port 8081 can be changed)
 -e OPENCELLID_KEY=your_access_token \
--e ROOT_PWD=your_toot_password \ (optional => default "wago")
--e BRIDGE_IP_HOST=bridge.network.ip \ (optional => default "172.17.0.1")
+-e ROOT_PWD=your_root_password \ (optional => default "wago")
+-e BRIDGE_IP_HOST=your_bridge_IP_host \ (optional => default "172.17.0.1")
 wagoautomation/gps-logger:tag (e.g. latest or 01.01.00)
 ```
