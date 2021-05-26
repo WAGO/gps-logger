@@ -13,7 +13,7 @@ docker run -d \
 -e OPENCELLID_KEY=your_access_token \
 -e ROOT_PWD=your_toot_password \ (optional => default "wago")
 -e BRIDGE_IP_HOST=bridge.network.ip \ (optional => default "172.17.0.1")
-wagoautomation/gps-logger:tag (e.g. latest or 0.1.0)
+wagoautomation/gps-logger:tag (e.g. latest or 01.01.00)
 ```
 ## Get OpenCelliD access token
 - Create a free account on the website https://opencellid.org/. 
